@@ -1,7 +1,7 @@
 === WBD Real Estate Suite ===
 Contributors: wpbranddigital
 Tags: real estate, property listings, realtor, property management, real estate agent
-Requires at least: 6.8
+Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.0
@@ -91,6 +91,18 @@ It is made for independent agents, small agencies, property consultants, small d
 * Accessible: semantic HTML, labelled controls, focus states, keyboard support and reduced-motion support.
 * SEO: schema.org `RealEstateListing` structured data, clean URLs, and `noindex` on filtered result pages to avoid duplicate content.
 * Translation-ready and RTL-ready.
+
+== Development ==
+
+Public source code repository:
+https://github.com/wpbranddigital/wbd-real-estate-suite
+
+Build Instructions:
+
+1. npm install
+2. npm run build
+3. npm run start (development)
+wbd real estate suite is built using @wordpress/scripts.
 
 == Installation ==
 

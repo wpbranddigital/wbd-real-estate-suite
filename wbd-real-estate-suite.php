@@ -1,10 +1,9 @@
 <?php
 /**
  * Plugin Name:       WBD Real Estate Suite
- * Plugin URI:        https://www.wpbranddigital.org/
  * Description:       Lightweight, Gutenberg-native property listings, agent profiles, property search, inquiry forms and a built-in lead CRM for real estate agents and agencies.
  * Version:           1.0.0
- * Requires at least: 6.8
+ * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            WPBrand Digital
  * Author URI:        https://www.wpbranddigital.org/
