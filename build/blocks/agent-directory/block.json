@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbdres/agent-directory",
+  "version": "1.0.0",
+  "title": "Agent Directory",
+  "category": "wbd-real-estate",
+  "icon": "groups",
+  "description": "Grid of all agents with photos, roles and listing counts.",
+  "keywords": [
+    "agents",
+    "team",
+    "directory"
+  ],
+  "textdomain": "wbd-real-estate-suite",
+  "attributes": {
+    "perPage": {
+      "type": "number",
+      "default": 12
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "title",
+      "enum": [
+        "title",
+        "date",
+        "menu_order"
+      ]
+    },
+    "showBio": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContact": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCount": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "wbdres-frontend",
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  }
+}

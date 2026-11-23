@@ -1,0 +1,125 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/property-search",
+	"version": "1.0.0",
+	"title": "Property Search",
+	"category": "wbd-real-estate",
+	"icon": "search",
+	"description": "Search bar or sidebar filters for properties. Works without JavaScript and keeps filters in shareable URLs.",
+	"keywords": [
+		"search",
+		"filter",
+		"find"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "bar",
+			"enum": [
+				"bar",
+				"sidebar",
+				"compact"
+			]
+		},
+		"resultsPage": {
+			"type": "number",
+			"default": 0
+		},
+		"statusTabs": {
+			"type": "boolean",
+			"default": true
+		},
+		"showKeyword": {
+			"type": "boolean",
+			"default": true
+		},
+		"showLocation": {
+			"type": "boolean",
+			"default": true
+		},
+		"showType": {
+			"type": "boolean",
+			"default": true
+		},
+		"showStatus": {
+			"type": "boolean",
+			"default": false
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"showRooms": {
+			"type": "boolean",
+			"default": true
+		},
+		"showArea": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFeatures": {
+			"type": "boolean",
+			"default": true
+		},
+		"buttonText": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"variations": [
+		{
+			"name": "sidebar-filters",
+			"title": "Property Filters (Sidebar)",
+			"description": "Vertical filter panel with checkboxes, price and amenities.",
+			"icon": "filter",
+			"attributes": {
+				"layout": "sidebar"
+			},
+			"scope": [
+				"inserter"
+			],
+			"isActive": [
+				"layout"
+			]
+		},
+		{
+			"name": "type-filter",
+			"title": "Property Type Filter",
+			"description": "Compact type + location search.",
+			"icon": "category",
+			"attributes": {
+				"layout": "compact",
+				"showKeyword": false,
+				"showPrice": false,
+				"showRooms": false,
+				"statusTabs": false
+			},
+			"scope": [
+				"inserter"
+			]
+		}
+	],
+	"example": {
+		"attributes": {}
+	}
+}

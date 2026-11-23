@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/property-gallery",
+	"version": "1.0.0",
+	"title": "Property Gallery",
+	"category": "wbd-real-estate",
+	"icon": "format-gallery",
+	"description": "Photo grid with an accessible full-screen viewer.",
+	"keywords": [
+		"photos",
+		"images",
+		"lightbox"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "hero",
+			"enum": [
+				"hero",
+				"grid",
+				"stack"
+			]
+		},
+		"lightbox": {
+			"type": "boolean",
+			"default": true
+		},
+		"max": {
+			"type": "number",
+			"default": 30
+		},
+		"propertyId": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"example": {
+		"attributes": {}
+	}
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbdres/property-terms",
+  "version": "1.0.0",
+  "title": "Browse by Type or Location",
+  "category": "wbd-real-estate",
+  "icon": "tag",
+  "description": "Clickable property types, locations, statuses or amenities with listing counts.",
+  "keywords": [
+    "types",
+    "locations",
+    "categories",
+    "browse"
+  ],
+  "textdomain": "wbd-real-estate-suite",
+  "attributes": {
+    "taxonomy": {
+      "type": "string",
+      "default": "wbd_property_type",
+      "enum": [
+        "wbd_property_type",
+        "wbd_property_location",
+        "wbd_property_status",
+        "wbd_property_feature"
+      ]
+    },
+    "layout": {
+      "type": "string",
+      "default": "cards",
+      "enum": [
+        "cards",
+        "chips"
+      ]
+    },
+    "showCount": {
+      "type": "boolean",
+      "default": true
+    },
+    "hideEmpty": {
+      "type": "boolean",
+      "default": true
+    },
+    "number": {
+      "type": "number",
+      "default": 8
+    },
+    "topLevel": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "wbdres-frontend",
+  "render": "file:./render.php",
+  "variations": [
+    {
+      "name": "locations",
+      "title": "Property Location Filter",
+      "description": "Browse properties by city or area.",
+      "icon": "location",
+      "attributes": {
+        "taxonomy": "wbd_property_location"
+      },
+      "isActive": [
+        "taxonomy"
+      ],
+      "scope": [
+        "inserter",
+        "transform"
+      ]
+    }
+  ],
+  "example": {
+    "attributes": {}
+  }
+}

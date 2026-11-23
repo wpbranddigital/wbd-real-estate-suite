@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbdres/property-video",
+  "version": "1.0.0",
+  "title": "Property Video",
+  "category": "wbd-real-estate",
+  "icon": "video-alt3",
+  "description": "Embedded property video (YouTube, Vimeo…) and virtual tour link.",
+  "keywords": [
+    "video",
+    "tour",
+    "youtube"
+  ],
+  "textdomain": "wbd-real-estate-suite",
+  "attributes": {
+    "propertyId": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "wbdres-frontend",
+  "render": "file:./render.php",
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "example": {
+    "attributes": {}
+  }
+}

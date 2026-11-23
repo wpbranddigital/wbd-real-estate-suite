@@ -1,0 +1,64 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/mortgage-calculator",
+	"version": "1.0.0",
+	"title": "Mortgage Calculator",
+	"category": "wbd-real-estate",
+	"icon": "calculator",
+	"description": "Instant monthly payment estimate. Uses the current property price when available.",
+	"keywords": [
+		"mortgage",
+		"loan",
+		"calculator",
+		"finance"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"price": {
+			"type": "number",
+			"default": 0
+		},
+		"rate": {
+			"type": "number",
+			"default": 0
+		},
+		"years": {
+			"type": "number",
+			"default": 0
+		},
+		"down": {
+			"type": "number",
+			"default": -1
+		},
+		"title": {
+			"type": "string",
+			"default": "Mortgage calculator"
+		},
+		"propertyId": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"example": {
+		"attributes": {}
+	}
+}

@@ -1,0 +1,32 @@
+{
+  "name": "wbd-real-estate-suite",
+  "version": "1.0.0",
+  "description": "Gutenberg-native property listings, agents and lead management for WordPress.",
+  "author": "WPBrand Digital",
+  "license": "GPL-2.0-or-later",
+  "private": true,
+  "files": [
+    "wbd-real-estate-suite.php",
+    "uninstall.php",
+    "readme.txt",
+    "build",
+    "includes",
+    "patterns",
+    "templates",
+    "src",
+    "package.json",
+    "webpack.config.js"
+  ],
+  "scripts": {
+    "build": "wp-scripts build --experimental-modules --webpack-copy-php",
+    "start": "wp-scripts start --experimental-modules --webpack-copy-php",
+    "lint:js": "wp-scripts lint-js src",
+    "lint:css": "wp-scripts lint-style \"src/**/*.scss\"",
+    "format": "wp-scripts format src",
+    "plugin-zip": "wp-scripts plugin-zip"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.0.0",
+    "ajv": "^8.20.0"
+  }
+}

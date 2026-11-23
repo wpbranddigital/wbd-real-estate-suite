@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbdres/property-submission",
+  "version": "1.0.0",
+  "title": "Frontend Property Submission",
+  "category": "wbd-real-estate",
+  "icon": "upload",
+  "description": "Let logged-in users submit properties for review, and see the status of their submissions.",
+  "keywords": [
+    "submit",
+    "frontend",
+    "dashboard",
+    "upload"
+  ],
+  "textdomain": "wbd-real-estate-suite",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Submit a property"
+    },
+    "showMySubmissions": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ],
+    "multiple": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "wbdres-frontend",
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  }
+}

@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/property-map",
+	"version": "1.0.0",
+	"title": "Property Map",
+	"category": "wbd-real-estate",
+	"icon": "location-alt",
+	"description": "OpenStreetMap location map with privacy consent. No API key required.",
+	"keywords": [
+		"map",
+		"location",
+		"openstreetmap"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"height": {
+			"type": "number",
+			"default": 380
+		},
+		"zoom": {
+			"type": "number",
+			"default": 15
+		},
+		"propertyId": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"example": {
+		"attributes": {}
+	}
+}

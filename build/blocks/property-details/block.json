@@ -1,0 +1,100 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbdres/property-details",
+  "version": "1.0.0",
+  "title": "Property Details",
+  "category": "wbd-real-estate",
+  "icon": "admin-home",
+  "description": "Complete single-property layout: gallery, key facts, description, features, map, agent and inquiry form.",
+  "keywords": [
+    "single",
+    "property",
+    "layout"
+  ],
+  "textdomain": "wbd-real-estate-suite",
+  "attributes": {
+    "showGallery": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeader": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSpecs": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeatures": {
+      "type": "boolean",
+      "default": true
+    },
+    "showVideo": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMap": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAgent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showInquiry": {
+      "type": "boolean",
+      "default": true
+    },
+    "showViewing": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMortgage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSimilar": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCta": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "propertyId": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "multiple": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "wbdres-frontend",
+  "render": "file:./render.php",
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "example": {
+    "attributes": {}
+  }
+}

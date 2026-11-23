@@ -1,0 +1,265 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/property-listings",
+	"version": "1.0.0",
+	"title": "Property Listings",
+	"category": "wbd-real-estate",
+	"icon": "grid-view",
+	"description": "Grid or list of properties with filters, sorting, pagination and results toolbar.",
+	"keywords": [
+		"property",
+		"listing",
+		"real estate",
+		"grid"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"perPage": {
+			"type": "number",
+			"default": 6
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid",
+			"enum": [
+				"grid",
+				"list"
+			]
+		},
+		"cardStyle": {
+			"type": "string",
+			"default": "modern",
+			"enum": [
+				"modern",
+				"overlay"
+			]
+		},
+		"orderBy": {
+			"type": "string",
+			"default": "newest"
+		},
+		"types": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "number"
+			}
+		},
+		"statuses": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "number"
+			}
+		},
+		"locations": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "number"
+			}
+		},
+		"featuredOnly": {
+			"type": "boolean",
+			"default": false
+		},
+		"agentId": {
+			"type": "number",
+			"default": 0
+		},
+		"similarTo": {
+			"type": "number",
+			"default": 0
+		},
+		"excludeCurrent": {
+			"type": "boolean",
+			"default": false
+		},
+		"inheritSearch": {
+			"type": "boolean",
+			"default": false
+		},
+		"useMainQuery": {
+			"type": "boolean",
+			"default": false
+		},
+		"showPagination": {
+			"type": "boolean",
+			"default": true
+		},
+		"showToolbar": {
+			"type": "boolean",
+			"default": false
+		},
+		"showViewToggle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSort": {
+			"type": "boolean",
+			"default": true
+		},
+		"showChips": {
+			"type": "boolean",
+			"default": true
+		},
+		"offset": {
+			"type": "number",
+			"default": 0
+		},
+		"showImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAddress": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSpecs": {
+			"type": "boolean",
+			"default": true
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": false
+		},
+		"showAgent": {
+			"type": "boolean",
+			"default": false
+		},
+		"showBadges": {
+			"type": "boolean",
+			"default": true
+		},
+		"showActions": {
+			"type": "boolean",
+			"default": true
+		},
+		"showType": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageRatio": {
+			"type": "string",
+			"default": "4/3"
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 3
+		},
+		"emptyMessage": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"variations": [
+		{
+			"name": "featured",
+			"title": "Featured Properties",
+			"description": "Showcase featured listings.",
+			"icon": "star-filled",
+			"attributes": {
+				"featuredOnly": true,
+				"perPage": 4,
+				"columns": 4,
+				"showPagination": false
+			},
+			"scope": [
+				"inserter"
+			],
+			"isActive": [
+				"featuredOnly"
+			]
+		},
+		{
+			"name": "latest",
+			"title": "Latest Properties",
+			"description": "Newest listings first.",
+			"icon": "clock",
+			"attributes": {
+				"orderBy": "newest",
+				"perPage": 8,
+				"columns": 4,
+				"showPagination": false
+			},
+			"scope": [
+				"inserter"
+			]
+		},
+		{
+			"name": "search-results",
+			"title": "Property Search Results",
+			"description": "Results for the Property Search block, with toolbar and pagination.",
+			"icon": "search",
+			"attributes": {
+				"inheritSearch": true,
+				"showToolbar": true,
+				"perPage": 12,
+				"columns": 3
+			},
+			"scope": [
+				"inserter"
+			],
+			"isActive": [
+				"inheritSearch"
+			]
+		},
+		{
+			"name": "similar",
+			"title": "Similar Properties",
+			"description": "Same type or location as the current property.",
+			"icon": "admin-page",
+			"attributes": {
+				"similarTo": -1,
+				"perPage": 3,
+				"showPagination": false
+			},
+			"scope": [
+				"inserter"
+			]
+		},
+		{
+			"name": "agent-properties",
+			"title": "Agent Properties",
+			"description": "Listings of the current agent.",
+			"icon": "businessperson",
+			"attributes": {
+				"agentId": -1,
+				"perPage": 6
+			},
+			"scope": [
+				"inserter"
+			]
+		}
+	],
+	"example": {
+		"attributes": {}
+	}
+}

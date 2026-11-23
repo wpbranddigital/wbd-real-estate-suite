@@ -1,0 +1,110 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/inquiry-form",
+	"version": "1.0.0",
+	"title": "Property Inquiry Form",
+	"category": "wbd-real-estate",
+	"icon": "email-alt",
+	"description": "Lead form for property inquiries, viewing requests or agent contact. Leads appear in Real Estate → Leads.",
+	"keywords": [
+		"contact",
+		"lead",
+		"form",
+		"viewing",
+		"enquiry"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"formType": {
+			"type": "string",
+			"default": "inquiry",
+			"enum": [
+				"inquiry",
+				"viewing",
+				"contact"
+			]
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonText": {
+			"type": "string",
+			"default": ""
+		},
+		"showPhone": {
+			"type": "boolean",
+			"default": true
+		},
+		"phoneRequired": {
+			"type": "boolean",
+			"default": false
+		},
+		"propertyId": {
+			"type": "number",
+			"default": 0
+		},
+		"agentId": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"variations": [
+		{
+			"name": "viewing",
+			"title": "Schedule a Viewing Form",
+			"description": "Visitors pick a preferred date and time.",
+			"icon": "calendar-alt",
+			"attributes": {
+				"formType": "viewing",
+				"title": "Schedule a viewing"
+			},
+			"isActive": [
+				"formType"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "contact",
+			"title": "Contact Agent Form",
+			"description": "General contact form routed to an agent.",
+			"icon": "businessperson",
+			"attributes": {
+				"formType": "contact",
+				"title": "Contact us"
+			},
+			"isActive": [
+				"formType"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		}
+	],
+	"example": {
+		"attributes": {}
+	}
+}

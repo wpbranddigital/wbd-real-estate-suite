@@ -1,0 +1,208 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbdres/property-field",
+	"version": "1.0.0",
+	"title": "Property Field",
+	"category": "wbd-real-estate",
+	"icon": "feedback",
+	"description": "Shows one piece of property data — title, price, address, status, specs or features — for custom single-property designs.",
+	"keywords": [
+		"price",
+		"title",
+		"address",
+		"status",
+		"badge",
+		"specs"
+	],
+	"textdomain": "wbd-real-estate-suite",
+	"attributes": {
+		"field": {
+			"type": "string",
+			"default": "price",
+			"enum": [
+				"title",
+				"price",
+				"address",
+				"status",
+				"specs",
+				"keyfacts",
+				"features",
+				"type",
+				"reference"
+			]
+		},
+		"propertyId": {
+			"type": "number",
+			"default": 0
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 1
+		},
+		"showLabels": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true
+		},
+		"color": {
+			"text": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "wbdres-frontend",
+	"render": "file:./render.php",
+	"usesContext": [
+		"postId",
+		"postType"
+	],
+	"variations": [
+		{
+			"name": "title",
+			"title": "Property Title",
+			"icon": "heading",
+			"attributes": {
+				"field": "title"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "price",
+			"title": "Property Price",
+			"icon": "money-alt",
+			"attributes": {
+				"field": "price"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "address",
+			"title": "Property Address",
+			"icon": "location",
+			"attributes": {
+				"field": "address"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "status",
+			"title": "Property Status Badge",
+			"icon": "tag",
+			"attributes": {
+				"field": "status"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "specs",
+			"title": "Property Specifications",
+			"icon": "editor-table",
+			"attributes": {
+				"field": "specs"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "keyfacts",
+			"title": "Property Key Facts",
+			"icon": "chart-bar",
+			"attributes": {
+				"field": "keyfacts"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "features",
+			"title": "Property Features",
+			"icon": "yes-alt",
+			"attributes": {
+				"field": "features"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "type",
+			"title": "Property Type",
+			"icon": "category",
+			"attributes": {
+				"field": "type"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		},
+		{
+			"name": "reference",
+			"title": "Property Reference",
+			"icon": "id",
+			"attributes": {
+				"field": "reference"
+			},
+			"isActive": [
+				"field"
+			],
+			"scope": [
+				"inserter",
+				"transform"
+			]
+		}
+	],
+	"example": {
+		"attributes": {}
+	}
+}

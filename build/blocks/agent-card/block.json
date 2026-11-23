@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wbdres/agent-card",
+  "version": "1.0.0",
+  "title": "Agent Profile",
+  "category": "wbd-real-estate",
+  "icon": "id",
+  "description": "Agent photo, role, phone, WhatsApp and social links.",
+  "keywords": [
+    "agent",
+    "realtor",
+    "profile",
+    "team"
+  ],
+  "textdomain": "wbd-real-estate-suite",
+  "attributes": {
+    "agentId": {
+      "type": "number",
+      "default": 0
+    },
+    "layout": {
+      "type": "string",
+      "default": "card",
+      "enum": [
+        "card",
+        "horizontal",
+        "compact"
+      ]
+    },
+    "showBio": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContact": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSocial": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCount": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "wbdres-frontend",
+  "render": "file:./render.php",
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "example": {
+    "attributes": {}
+  }
+}
